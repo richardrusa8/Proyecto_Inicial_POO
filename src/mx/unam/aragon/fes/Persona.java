@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author unam
  */
-public class Persona implements Serializable {
+public class Persona implements Serializable{
     private String nombre;
     private String apPaterno;
     private String apMaterno;

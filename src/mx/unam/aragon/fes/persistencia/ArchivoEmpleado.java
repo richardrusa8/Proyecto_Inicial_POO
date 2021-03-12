@@ -1,23 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mx.unam.aragon.fes.persistencia;
 
-/**
- *
- * @author richar
- */
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+
 import java.util.ArrayList;
 import mx.unam.aragon.fes.Empleado;
 
-
 public class ArchivoEmpleado {
+
     private String archivo;
 
     public ArchivoEmpleado() {
@@ -34,9 +26,9 @@ public class ArchivoEmpleado {
     public void setArchivo(String archivo) {
         this.archivo = archivo;
     }
-    
-    public void guardarEmpleados(ArrayList<Empleado>datos){
-        //aqui el codigo para grabar en Disco Duro
+
+    public void guardarEmpleados(ArrayList<Empleado> datos) {
+        // aqui el codigo para grabar ed Disco Duro
         try {
             ObjectOutputStream fSalida = new ObjectOutputStream(
                     new FileOutputStream(archivo));
@@ -47,10 +39,10 @@ public class ArchivoEmpleado {
             e.printStackTrace();
         }
     }
-    
-    public ArrayList<Empleado> leerEmpleados(){
-        ArrayList<Empleado> tmp=null;
-        
+
+    public ArrayList<Empleado> leerEmpleados() {
+        ArrayList<Empleado> tmp = null;
+
         try {
             ObjectInputStream fLectura = new ObjectInputStream(
                     new FileInputStream(archivo));
@@ -68,4 +60,5 @@ public class ArchivoEmpleado {
         }
         return tmp;
     }
+
 }
